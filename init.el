@@ -691,10 +691,14 @@
   "indent current paragraph"
   (interactive)
   (save-excursion
-  ;; lisp code here involving moving cursor, mark, changing buffer.
+    ;; lisp code here involving moving cursor, mark, changing buffer.
     (delete-trailing-whitespace)
     (mark-paragraph)
     (indent-region (region-beginning) (region-end) nil)))
+(defun quick-revert-buffer ()
+  (interactive)
+  (revert-buffer t t t)
+  (message "buffer is reverted"))
 
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring"
@@ -750,6 +754,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c C-, k") 'e2wm:dp-code-sub-toggle-command)
 (define-key my-keys-minor-mode-map (kbd "C-, '") 'comment-dwim)
 (define-key my-keys-minor-mode-map (kbd "C-, {") 'insert-grouping-brackets)
+(define-key my-keys-minor-mode-map (kbd "C-c C-r") 'quick-revert-buffer)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
