@@ -35,6 +35,8 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (electric-indent-mode 0)
+(setq default-tab-width 4)
+(setq c-basic-offset 4)
 
 (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)
@@ -482,6 +484,7 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 (require 'auto-complete)
+(setq ad-redefinition-action 'accept)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (eval-after-load "auto-complete"
   '(setq ac-modes (append '(sage-shell-mode sage-shell:sage-mode) ac-modes)))
