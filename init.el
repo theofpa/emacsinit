@@ -20,6 +20,7 @@
 (setq default-frame-alist '((cursor-color . "Gold")))
 (add-to-list 'default-frame-alist
              '(font . "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
+
 ;; use Okular to view AUCTeX-generated PDFs
 ;; (when (require 'latex nil t)
 ;;   (push '("%(masterdir)" (lambda nil (file-truename (TeX-master-directory))))
@@ -864,46 +865,46 @@
 ;; ---- BEGIN OCAML --------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
-(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-;; (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
-;; (autoload 'tuareg-imenu-set-imenu "tuareg-imenu"
-;;   "Configuration of imenu for tuareg" t)0
-;; (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
-(setq auto-mode-alist
-      (append '(("\\.ml[ily]?$" . tuareg-mode)
-                ("\\.topml$" . tuareg-mode))
-              auto-mode-alist))
-(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
-(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
-(add-hook 'tuareg-mode-hook 'merlin-mode)
-;(setq merlin-use-auto-complete-mode 'easy)
-(add-hook 'merlin-mode-hook 'company-mode)
-(setq merlin-error-after-save nil)
-(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-;; (add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)
-(defun merlin-packages ()
-  (interactive)
-  (merlin-use "batteries")
-  (merlin-use "core"))
-(add-hook 'merlin-mode-hook 'merlin-packages)
-;; 					; Make company aware of merlin
-;; 					; (add-to-list 'company-backends 'merlin-company-backend)
-(eval-after-load 'company
-  (progn
-    '(add-to-list 'company-backends 'merlin-company-backend)
-    ))
-;; 					; Enable company on merlin managed buffers
-(add-to-list 'load-path "/home/xin/.opam/4.02.1/share/emacs/site-lisp")
-(require 'ocp-indent)
-(fset 'Printf-printf
-      [?P ?r ?i ?n ?t ?f ?. ?p ?r ?i ?n ?t ?f ?  ?\" ?^ backspace ?% ?s ?\\ ?n ?\C-e ?  ?\( ?d ?u ?m ?p ?  tab])
-(defun my-OCaml-keys ()
-  (local-set-key (kbd "C-, p") 'Printf-printf)
-  (local-set-key (kbd "C-. C-r") 'tuareg-eval-region))
-(add-hook 'tuareg-mode-hook 'my-OCaml-keys)
+;; (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+;; ;; (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+;; ;; (autoload 'tuareg-imenu-set-imenu "tuareg-imenu"
+;; ;;   "Configuration of imenu for tuareg" t)0
+;; ;; (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+;; (setq auto-mode-alist
+;;       (append '(("\\.ml[ily]?$" . tuareg-mode)
+;;                 ("\\.topml$" . tuareg-mode))
+;;               auto-mode-alist))
+;; (autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
+;; (add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
+;; (add-hook 'tuareg-mode-hook 'merlin-mode)
+;; ;(setq merlin-use-auto-complete-mode 'easy)
+;; (add-hook 'merlin-mode-hook 'company-mode)
+;; (setq merlin-error-after-save nil)
+;; (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; ;; (add-hook 'tuareg-mode-hook 'merlin-mode t)
+;; (add-hook 'caml-mode-hook 'merlin-mode t)
+;; ;; Use opam switch to lookup ocamlmerlin binary
+;; (setq merlin-command 'opam)
+;; (defun merlin-packages ()
+;;   (interactive)
+;;   (merlin-use "batteries")
+;;   (merlin-use "core"))
+;; (add-hook 'merlin-mode-hook 'merlin-packages)
+;; ;; 					; Make company aware of merlin
+;; ;; 					; (add-to-list 'company-backends 'merlin-company-backend)
+;; (eval-after-load 'company
+;;   (progn
+;;     '(add-to-list 'company-backends 'merlin-company-backend)
+;;     ))
+;; ;; 					; Enable company on merlin managed buffers
+;; (add-to-list 'load-path "/home/xin/.opam/4.02.1/share/emacs/site-lisp")
+;; (require 'ocp-indent)
+;; (fset 'Printf-printf
+;;       [?P ?r ?i ?n ?t ?f ?. ?p ?r ?i ?n ?t ?f ?  ?\" ?^ backspace ?% ?s ?\\ ?n ?\C-e ?  ?\( ?d ?u ?m ?p ?  tab])
+;; (defun my-OCaml-keys ()
+;;   (local-set-key (kbd "C-, p") 'Printf-printf)
+;;   (local-set-key (kbd "C-. C-r") 'tuareg-eval-region))
+;; (add-hook 'tuareg-mode-hook 'my-OCaml-keys)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END OCAML ----------------------------------------------------------------------------------------------------------------------------
