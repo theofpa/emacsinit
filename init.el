@@ -1098,7 +1098,7 @@
 
 (add-hook 'python-mode-hook #'electric-spacing-mode)
 (add-hook 'ess-mode-hook #'electric-spacing-mode)
-(add-hook 'ess-mode-hook #'electric-spacing-mode)
+(add-hook 'c++-mode-hook #'electric-spacing-mode)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ELECTRIC-SPACING -----------------------------------------------------------------------------------------------------------------
@@ -1110,6 +1110,7 @@
 
 (add-hook 'python-mode-hook 'highlight-indentation-mode)
 (add-hook 'tuareg-mode-hook 'highlight-indentation-mode)
+(add-hook 'ess-mode-hook 'highlight-indentation-mode)
 (add-hook 'c++-mode-hook 'highlight-indentation-mode)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
