@@ -620,25 +620,6 @@
 ;; ---- END TRANSPARENCY ---------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
-;;;;;;;;;;;;;;;;;;;;  jedi-emacs  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (setq jedi:server-args
-;;       '("--sys-path" "/usr/lib/python3/dist-packages"
-;;         "--sys-path" "/usr/local/lib/python3.3/dist-packages"))
-;; (setq jedi:server-args
-;;       '("--sys-path" "/home/xin/anaconda"
-;;      ))
-;; (require 'jedi)
-;; ;(setq jedi:server-command (list "/usr/bin/python3" jedi:server-script))
-;; (ac-linum-workaround)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq split-width-threshold nil)
-
-;; (setq jedi:setup-keys t)                      ; optional
-;; (setq jedi:complete-on-dot t)                 ; optional
-                                        ;(setq split-width-threshold nil)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- BEGIN PYTHON -------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
@@ -646,27 +627,20 @@
 (setq python-shell-virtualenv-path "/home/xin/anaconda")
 (setq pdb-path '/home/xin/anaconda/lib/python3.4/pdb.py
       gud-pdb-command-name (symbol-name pdb-path))
-(autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-;(add-hook 'python-mode-hook 'company-mode)
-(add-hook 'python-mode-hook 'ac-anaconda-setup)
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook 'eldoc-mode)
 
-(add-hook 'py-python-shell-mode-hook 'ac-anaconda-setup)
-(add-hook 'py-python-shell-mode-hook 'anaconda-mode)
-(add-hook 'py-python-shell-mode-hook 'eldoc-mode)
+;; (add-hook 'python-mode-hook 'anaconda-mode)
+;; ;; (add-hook 'python-mode-hook 'company-mode)
+;; ;; (eval-after-load "company-mode"
+;; ;;   '(add-to-list 'company-backends 'company-anaconda))
+;; (add-hook 'python-mode-hook 'ac-anaconda-setup)
+;; (add-hook 'python-mode-hook 'eldoc-mode)
 
-;; (setq-default py-shell-name "ipython")
-;; (setq-default py-which-bufname "IPython")
-;;                                         ; switch to the interpreter after executing code
-;; (setq py-shell-switch-buffers-on-execute-p t)
-;; (setq py-switch-buffers-on-execute-p t)
-;;                                         ; don't split windows
-;; (setq py-split-windows-on-execute-p t)
-;; (setq py-force-py-shell-name-p t)
-;; (setq py-python-command-args '("--matplotlib" "--colors" "LightBG"))
+;; (add-hook 'py-python-shell-mode-hook 'ac-anaconda-setup)
+;; (add-hook 'py-python-shell-mode-hook 'anaconda-mode)
+;; (add-hook 'py-python-shell-mode-hook 'eldoc-mode)
+
+(elpy-enable)
+(setq elpy-rpc-backend "jedi")
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END PYTHON ---------------------------------------------------------------------------------------------------------------------------
