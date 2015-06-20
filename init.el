@@ -652,8 +652,11 @@
 ;(add-hook 'python-mode-hook 'company-mode)
 (add-hook 'python-mode-hook 'ac-anaconda-setup)
 (add-hook 'python-mode-hook 'anaconda-mode)
-                                        ;(add-hook 'python-mode-hook 'ac-anaconda-setup)
 (add-hook 'python-mode-hook 'eldoc-mode)
+
+(add-hook 'py-python-shell-mode-hook 'ac-anaconda-setup)
+(add-hook 'py-python-shell-mode-hook 'anaconda-mode)
+(add-hook 'py-python-shell-mode-hook 'eldoc-mode)
 
 ;; (setq-default py-shell-name "ipython")
 ;; (setq-default py-which-bufname "IPython")
@@ -783,6 +786,7 @@
   (py-execute-buffer))
 (defun my-python-keys ()
   (local-set-key (kbd "C-, C-c") 'py-save-all-and-compile)
+  (local-set-key (kbd "C-c C-s") 'py-switch-to-python)
   )
 (add-hook 'python-mode-hook 'my-python-keys)
 
@@ -1097,8 +1101,25 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 (add-hook 'python-mode-hook #'electric-spacing-mode)
+(add-hook 'py-python-shell-mode-hook #'electric-spacing-mode)
 (add-hook 'ess-mode-hook #'electric-spacing-mode)
 (add-hook 'c++-mode-hook #'electric-spacing-mode)
+
+(defvar electric-spacing-rules
+  '((?= . electric-spacing-self-insert-command)
+    (?< . electric-spacing-<)
+    (?> . electric-spacing->)
+    (?% . electric-spacing-%)
+    (?+ . electric-spacing-+)
+    (?- . electric-spacing--)
+    (?* . electric-spacing-*)
+    (?/ . electric-spacing-/)
+    (?& . electric-spacing-&)
+    (?| . electric-spacing-self-insert-command)
+    (?: . electric-spacing-:)
+    (?? . electric-spacing-?)
+    (?, . electric-spacing-\,)
+    (?~ . electric-spacing-~)))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ELECTRIC-SPACING -----------------------------------------------------------------------------------------------------------------
