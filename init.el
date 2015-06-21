@@ -1090,13 +1090,11 @@
     (?/ . electric-spacing-/)
     (?& . electric-spacing-&)
     (?| . electric-spacing-self-insert-command)
-    (?: . my-electric-spacing-:)
+    (?: . electric-spacing-:)
     (?? . electric-spacing-?)
     (?, . electric-spacing-\,)
     (?~ . electric-spacing-~)))
 
-(defun my-electric-spacing-: ()
-  (electric-spacing-insert ":" 'after))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ELECTRIC-SPACING -----------------------------------------------------------------------------------------------------------------
