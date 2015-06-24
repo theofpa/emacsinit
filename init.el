@@ -643,6 +643,7 @@
 ;; (add-hook 'py-python-shell-mode-hook 'eldoc-mode)
 
 (elpy-enable)
+(elpy-use-ipython)
 (setq elpy-rpc-backend "jedi")
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
