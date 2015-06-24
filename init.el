@@ -1075,33 +1075,48 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
-;; ---- BEGIN ELECTRIC-SPACING ---------------------------------------------------------------------------------------------------------------
+;; ---- BEGIN ELECTRIC-OPERATOR --------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
-(add-hook 'python-mode-hook #'electric-spacing-mode)
-(add-hook 'py-python-shell-mode-hook #'electric-spacing-mode)
-(add-hook 'ess-mode-hook #'electric-spacing-mode)
-(add-hook 'c++-mode-hook #'electric-spacing-mode)
+(add-hook 'python-mode-hook #'electric-operator-mode)
+(add-hook 'py-python-shell-mode-hook #'electric-operator-mode)
+(add-hook 'ess-mode-hook #'electric-operator-mode)
+(add-hook 'c++-mode-hook #'electric-operator-mode)
 
-(defvar electric-spacing-rules
-  '((?= . electric-spacing-self-insert-command)
-    (?< . electric-spacing-<)
-    (?> . electric-spacing->)
-    (?% . electric-spacing-%)
-    ;(?+ . electric-spacing-+)
-    ;(?- . electric-spacing--)
-    ;(?* . electric-spacing-*)
-    ;(?/ . electric-spacing-/)
-    (?& . electric-spacing-&)
-    (?| . electric-spacing-self-insert-command)
-    (?: . electric-spacing-:)
-    (?? . electric-spacing-?)
-    (?, . electric-spacing-\,)
-    (?~ . electric-spacing-~)))
+;; (defvar electric-operator-rules
+;;   '((?= . electric-operator-self-insert-command)
+;;     (?< . electric-operator-<)
+;;     (?> . electric-operator->)
+;;     (?% . electric-operator-%)
+;;     (?+ . electric-operator-+)
+;;     (?- . electric-operator--)
+;;     (?* . electric-operator-*)
+;;     (?/ . electric-operator-/)
+;;     (?& . electric-operator-&)
+;;     (?| . electric-operator-self-insert-command)
+;;     (?: . electric-operator-:)
+;;     (?? . electric-operator-?)
+;;     (?, . electric-operator-\,)
+;;     (?~ . electric-operator-~)))
 
+(eval-after-load "electric-operator"
+  '(electric-operator-add-rules-for-mode 'python-mode
+										 (cons "+" nil)
+										 (cons "-" nil)
+										 (cons "*" nil)
+										 (cons "/" nil)
+										 ))
+
+(eval-after-load "electric-operator"
+  '(electric-operator-add-rules-for-mode 'c++-mode
+										 (cons "+" nil)
+										 (cons "-" nil)
+										 (cons "*" nil)
+										 (cons "/" nil)
+										 ))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
-;; ---- END ELECTRIC-SPACING -----------------------------------------------------------------------------------------------------------------
+;; ---- END ELECTRIC-OPERATOR ----------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
