@@ -1113,6 +1113,9 @@
 										 (cons "-" nil)
 										 (cons "*" nil)
 										 (cons "/" nil)
+										 (cons "<" nil)
+										 (cons ">" nil)
+										 (cons "&" nil)
 										 ))
 
 (eval-after-load "electric-operator"
