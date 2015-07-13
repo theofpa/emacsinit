@@ -741,6 +741,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-, '") 'comment-dwim)
 (define-key my-keys-minor-mode-map (kbd "C-, {") 'insert-grouping-brackets)
 (define-key my-keys-minor-mode-map (kbd "C-c C-r") 'quick-revert-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-. C-a") 'indent-rigidly-left-to-tab-stop)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
