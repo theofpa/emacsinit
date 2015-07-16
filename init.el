@@ -6,15 +6,41 @@
  '(TeX-source-correlate-method (quote synctex))
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
- '(TeX-view-program-list (quote (("Okular sync" "okular --unique %o#src:%n`pwd`/./%b"))))
+ '(TeX-view-program-list
+   (quote
+	(("Okular sync" "okular --unique %o#src:%n`pwd`/./%b"))))
  '(TeX-view-program-selection (quote ((output-pdf "Okular sync"))))
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
  '(initial-scratch-message nil)
+ '(irony-additional-clang-options (quote ("-std=c++14")))
  '(mode-require-final-newline t)
  '(paren-highlight-offscreen t)
  '(popwin:popup-window-position (quote bottom))
- '(popwin:special-display-config (quote ((direx:direx-mode :width 25 :position left :dedicated t) ("*Miniedit Help*" :noselect t) (help-mode) (completion-list-mode :noselect t) (compilation-mode :noselect t) (grep-mode :noselect t) (occur-mode :noselect t) ("*Pp Macroexpand Output*" :noselect t) ("*Shell Command Output*") ("*vc-diff*") ("*vc-change-log*") (" *undo-tree*" :width 60 :position right) ("^\\*anything.*\\*$" :regexp t) ("*slime-apropos*") ("*slime-macroexpansion*") ("*slime-description*") ("*slime-compilation*" :noselect t) ("*slime-xref*") (sldb-mode :stick t) (slime-repl-mode) (slime-connection-list-mode) ("*anaconda-doc*" :regexp nil))))
+ '(popwin:special-display-config
+   (quote
+	((direx:direx-mode :width 25 :position left :dedicated t)
+	 ("*Miniedit Help*" :noselect t)
+	 (help-mode)
+	 (completion-list-mode :noselect t)
+	 (compilation-mode :noselect t)
+	 (grep-mode :noselect t)
+	 (occur-mode :noselect t)
+	 ("*Pp Macroexpand Output*" :noselect t)
+	 ("*Shell Command Output*")
+	 ("*vc-diff*")
+	 ("*vc-change-log*")
+	 (" *undo-tree*" :width 60 :position right)
+	 ("^\\*anything.*\\*$" :regexp t)
+	 ("*slime-apropos*")
+	 ("*slime-macroexpansion*")
+	 ("*slime-description*")
+	 ("*slime-compilation*" :noselect t)
+	 ("*slime-xref*")
+	 (sldb-mode :stick t)
+	 (slime-repl-mode)
+	 (slime-connection-list-mode)
+	 ("*anaconda-doc*" :regexp nil))))
  '(preview-scale-function 1.5)
  '(require-final-newline nil))
 (setq default-frame-alist '((cursor-color . "Gold")))
@@ -113,10 +139,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(linum ((t (:inherit (shadow default) :background "#3f3f3f" :foreground "chocolate"))))
- '(powerline-active1 ((t (:inherit mode-line :background "grey22"))))
- '(powerline-active2 ((t (:inherit mode-line :background "grey34"))))
  '(mode-line ((t (:background "grey34" :box nil))))
- )
+ '(powerline-active1 ((t (:inherit mode-line :background "grey22"))))
+ '(powerline-active2 ((t (:inherit mode-line :background "grey34")))))
 (set-face-attribute 'default nil :height 120)
 ;;(defun toggle-fullscreen ()
 ;;  (interactive)
@@ -1075,6 +1100,7 @@
 ;; ---- END R --------------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
+
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- BEGIN ELECTRIC-OPERATOR --------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
@@ -1126,11 +1152,14 @@
 										 (cons "-" nil)
 										 (cons "*" nil)
 										 (cons "/" nil)
+										 (cons "<" nil)
+										 (cons "," ", ")
 										 ))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ELECTRIC-OPERATOR ----------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- BEGIN HIGHLIGHT-INDENTATION ----------------------------------------------------------------------------------------------------------
@@ -1143,4 +1172,18 @@
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END HIGHLIGHT-INDENTATION ------------------------------------------------------------------------------------------------------------
+;;--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+;;--------------------------------------------------------------------------------------------------------------------------------------------
+;; ---- BEGIN FLYCHECK -----------------------------------------------------------------------------------------------------------------------
+;;--------------------------------------------------------------------------------------------------------------------------------------------
+
+; (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'c++-mode-hook #'flycheck-mode)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+;;--------------------------------------------------------------------------------------------------------------------------------------------
+;; ---- END FLYCHECK -------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
