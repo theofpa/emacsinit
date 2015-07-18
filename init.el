@@ -723,7 +723,7 @@
     kill-ring."
   (interactive)
   (let ((beg (line-beginning-position 1))
-        (end (line-beginning-position 2)))
+        (end (line-end-position 1)))
     (if (eq last-command 'quick-copy-line)
         (kill-append (buffer-substring beg end) (< end beg))
       (kill-new (buffer-substring beg end))))
@@ -1144,6 +1144,7 @@
 										 (cons ">" nil)
 										 (cons "&" nil)
 										 (cons "++" nil)
+										 (cons ">>" nil)
 										 (cons "--" nil)))
 
 (eval-after-load "electric-operator"
