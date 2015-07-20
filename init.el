@@ -55,6 +55,7 @@
 ;;         TeX-view-program-list)
 ;;   (push '(output-pdf "Okular") TeX-view-program-selection))
 
+(toggle-frame-maximized)
 (setq initial-major-mode 'text-mode)
 (setq visible-bell t)
 (setq split-width-threshold nil)
@@ -271,6 +272,7 @@
 (setq-default TeX-master nil)
 (setq TeX-PDF-mode t)
 (setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
+(setq LaTeX-verbatim-environments-local '("Verbatim" "lstlisting"))
 
 
 (mapc (lambda (mode)
@@ -992,6 +994,16 @@
 (add-hook 'irony-mode-hook 'eldoc-mode)
 (add-hook 'irony-mode-hook 'irony-eldoc)
 
+(setq gdb-delete-out-of-scope nil)
+(defun my-gdb-many-windows ()
+  (interactive)
+  (setq gdb-many-windows t)
+  (call-interactively 'gdb))
+(defun my-gdb-in-sub ()
+  (interactive)
+  (e2wm:dp-code-navi-sub-command)
+  (setq gdb-many-windows nil)
+  (call-interactively 'gdb))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END CPP -----------------------------------------------------------------------------------------------------------------------------

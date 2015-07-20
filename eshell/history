@@ -94,3 +94,12 @@ opile 59.ml
 opile 59.ml
 ./59.native 
 exit
+ls
+g++ -Wall test.cpp
+a.out
+./a.out
+ls
+ls
+man find
+quit
+exit
