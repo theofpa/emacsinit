@@ -76,6 +76,10 @@
   (set-selection-coding-system 'utf-8))
 (prefer-coding-system 'utf-8)
 
+(defun forbid-vertical-split ()
+  "Only permit horizontal window splits."
+  (setq-local split-height-threshold nil)
+  (setq-local split-width-threshold 0))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- BEGIN ENVIRONMENT VARIABLES ----------------------------------------------------------------------------------------------------------
@@ -672,6 +676,8 @@
 (elpy-enable)
 (elpy-use-ipython)
 (setq elpy-rpc-backend "jedi")
+(add-hook 'python-mode-hook 'forbid-vertical-split)
+;; (add-hook 'python-mode-hook 'golden-ratio-mode)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END PYTHON ---------------------------------------------------------------------------------------------------------------------------
@@ -770,6 +776,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c C-r") 'quick-revert-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-. C-a") 'indent-rigidly-left-to-tab-stop)
 (define-key my-keys-minor-mode-map (kbd "C-. o") 'switch-window)
+(define-key my-keys-minor-mode-map (kbd "C-. C-g") 'golden-ratio)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
@@ -919,21 +926,6 @@
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END OCAML ----------------------------------------------------------------------------------------------------------------------------
-;;--------------------------------------------------------------------------------------------------------------------------------------------
-
-
-;;--------------------------------------------------------------------------------------------------------------------------------------------
-;; ---- BEGIN RACKET -------------------------------------------------------------------------------------------------------------------------
-;;--------------------------------------------------------------------------------------------------------------------------------------------
-
-(add-to-list 'auto-mode-alist '("\\.rkt$" . racket-mode))
-(add-hook 'racket-mode 'company-mode)
-(defun my-Racket-keys ()
-  (local-set-key (kbd "C-, C-c") 'racket-run))
-(add-hook 'racket-mode-hook 'my-Racket-keys)
-
-;;--------------------------------------------------------------------------------------------------------------------------------------------
-;; ---- END RACKET ---------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1108,6 +1100,8 @@
 (add-to-list 'auto-mode-alist '("\\.r$" . R-mode))
 (add-hook 'ess-mode-hook 'auto-complete-mode)
 (add-hook 'inferior-ess-mode-hook 'auto-complete-mode)
+(add-hook 'inferior-ess-mode-hook 'golden-ratio)
+(add-hook 'ess-mode-hook 'forbid-vertical-split)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END R --------------------------------------------------------------------------------------------------------------------------------
@@ -1239,12 +1233,15 @@
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
-(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
-(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+(eval-after-load "helm-gtags"
+  '(progn
+	 (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+	 (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+	 (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+	 (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+	 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+	 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+	 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END GGTAGS ---------------------------------------------------------------------------------------------------------------------------
