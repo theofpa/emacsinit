@@ -1,2 +1,4 @@
-((("interactive" .
+((("inferior-python-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("interactive" .
    [0 0 0 0 0 0 0 0 0 0 1])))

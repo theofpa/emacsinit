@@ -10,6 +10,9 @@
    (quote
 	(("Okular sync" "okular --unique %o#src:%n`pwd`/./%b"))))
  '(TeX-view-program-selection (quote ((output-pdf "Okular sync"))))
+ '(custom-safe-themes
+   (quote
+	("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "b06aaf5cefc4043ba018ca497a9414141341cb5a2152db84a9a80020d35644d1" "94af3f550c05e9c9fa235cb686d01600ef5adbfa6edf6274696c2beab6990104" default)))
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
  '(initial-scratch-message nil)
@@ -42,7 +45,8 @@
 	 (slime-connection-list-mode)
 	 ("*anaconda-doc*" :regexp nil))))
  '(preview-scale-function 1.5)
- '(require-final-newline nil))
+ '(require-final-newline nil)
+ '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape")))))
 (setq default-frame-alist '((cursor-color . "Gold")))
 (add-to-list 'default-frame-alist
              '(font . "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
@@ -275,8 +279,8 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (setq TeX-PDF-mode t)
-(setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
-(setq LaTeX-verbatim-environments-local '("Verbatim" "lstlisting"))
+;; (setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
+(setq LaTeX-verbatim-environments-local '("Verbatim" "lstlisting" "minted"))
 
 
 (mapc (lambda (mode)
@@ -347,6 +351,8 @@
       "\\qquad ")
 (fset 'insert-textbf
       "\\textbf{}\C-b")
+(fset 'insert-texttr
+      "\\texttr{}\C-b")
 (fset 'insert-backslash
       "\\")
 (fset 'insert-bigbrackets
@@ -384,6 +390,7 @@
   (local-set-key (kbd "C-, C-m") 'insert-qquad-mbox)
   (local-set-key (kbd "C-, q") 'insert-qquad)
   (local-set-key (kbd "C-, t") 'insert-textbf)
+  (local-set-key (kbd "C-, C-r") 'insert-texttr)  
   (local-set-key (kbd "C-, C-b") 'insert-bigbrackets)
   (local-set-key (kbd "C-. C-b") 'insert-bigbraces)
   (local-set-key (kbd "C-, C-i") 'insert-textit)
@@ -677,7 +684,8 @@
 (elpy-use-ipython)
 (setq elpy-rpc-backend "jedi")
 (add-hook 'python-mode-hook 'forbid-vertical-split)
-;; (add-hook 'python-mode-hook 'golden-ratio-mode)
+;; (add-hook 'inferior-python-mode-hook
+;;		  (lambda () (golden-ratio)))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END PYTHON ---------------------------------------------------------------------------------------------------------------------------
