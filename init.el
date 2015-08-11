@@ -166,8 +166,8 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(global-unset-key (kbd "S-<down-mouse-1>"))
-(global-set-key (kbd "S-<mouse-1>") 'mc/add-cursor-on-click)
+; (global-unset-key (kbd "S-<down-mouse-1>"))
+; (global-set-key (kbd "S-<mouse-1>") 'mc/add-cursor-on-click)
 
 (defun toggle-fullscreen (&optional f)
   (interactive)
