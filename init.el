@@ -762,7 +762,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-h") 'backward-kill-word)
 (define-key my-keys-minor-mode-map (kbd "C-, SPC") 'just-one-space)
 (define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
-(define-key my-keys-minor-mode-map (kbd "C-. i") 'imenu)
+(define-key my-keys-minor-mode-map (kbd "C-. i") 'helm-imenu)
 (define-key my-keys-minor-mode-map (kbd "C-. n") 'neotree-toggle)
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "C-. /") 'indent-region)
