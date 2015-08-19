@@ -108,7 +108,6 @@
 ;; (add-to-list 'exec-path "~/racket/bin")
 ;; (add-to-list 'exec-path "~/.opam/4.02.1/bin")
 
-(add-to-list 'load-path "/home/xin/.emacs.d/")
 (add-to-list 'load-path "/home/xin/.emacs.d/maxframe.el/")
 (add-to-list 'load-path "/home/xin/.emacs.d/yasnippet-master/")
 
