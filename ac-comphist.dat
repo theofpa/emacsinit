@@ -1,4 +1,4 @@
-((("interactive" .
-   [0 0 0 0 0 0 0 0 0 0 ...])
-  ("inferior-python-mode-hook" .
-   [0 0 0 0 0 0 0 0 0 1 ...])))
+((("inferior-python-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 1 \.\.\.])
+  ("interactive" .
+   [0 0 0 0 0 0 0 0 0 0 \.\.\.])))

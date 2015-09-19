@@ -681,6 +681,7 @@
 
 (elpy-enable)
 (elpy-use-ipython)
+(setq elpy-rpc-python-command "python3")
 (setq elpy-rpc-backend "jedi")
 (add-hook 'python-mode-hook 'forbid-vertical-split)
 ;; (add-hook 'inferior-python-mode-hook
