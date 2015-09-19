@@ -684,7 +684,8 @@
 (setq elpy-rpc-backend "jedi")
 (add-hook 'python-mode-hook 'forbid-vertical-split)
 ;; (add-hook 'inferior-python-mode-hook
-;;		  (lambda () (golden-ratio)))
+;;           (lambda () (run-with-idle-timer
+;;                       1 nil (lambda () (golden-ratio .5)))))
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END PYTHON ---------------------------------------------------------------------------------------------------------------------------
