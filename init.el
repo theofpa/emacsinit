@@ -684,6 +684,7 @@
 (setq elpy-rpc-python-command "python3")
 (setq elpy-rpc-backend "jedi")
 (add-hook 'python-mode-hook 'forbid-vertical-split)
+(add-hook 'inferior-python-mode-hook 'company-mode)
 ;; (add-hook 'inferior-python-mode-hook
 ;;           (lambda () (run-with-idle-timer
 ;;                       1 nil (lambda () (golden-ratio .5)))))
@@ -1170,6 +1171,7 @@
 										 (cons "*" nil)
 										 (cons "/" nil)
 										 (cons "<" nil)
+										 (cons "^" nil)
 										 (cons "," ", ")
 										 ))
 
