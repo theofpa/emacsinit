@@ -665,7 +665,7 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 (setq python-shell-virtualenv-path "/home/xin/anaconda")
-(setq pdb-path '/home/xin/anaconda/lib/python3.4/pdb.py
+(setq pdb-path '/home/xin/anaconda/lib/python3.5/pdb.py
       gud-pdb-command-name (symbol-name pdb-path))
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
