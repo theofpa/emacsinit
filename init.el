@@ -788,7 +788,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-. o") 'switch-window)
 (define-key my-keys-minor-mode-map (kbd "C-. C-g") 'golden-ratio)
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
-(define-key my-keys-minor-mode-map (kbd "C-. C-l") 'ace-jump-line-mode)
+(define-key my-keys-minor-mode-map (kbd "C-. l") 'ace-jump-line-mode)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
