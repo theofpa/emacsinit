@@ -1155,6 +1155,7 @@
 
 (eval-after-load "electric-operator"
   '(electric-operator-add-rules-for-mode 'c++-mode
+										 (cons ":" nil)
 										 (cons "+" nil)
 										 (cons "-" nil)
 										 (cons "*" nil)
