@@ -103,3 +103,6 @@ ls
 man find
 quit
 exit
+ls
+./test
+ls
