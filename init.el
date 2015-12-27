@@ -389,7 +389,7 @@
   (local-set-key (kbd "C-, C-m") 'insert-qquad-mbox)
   (local-set-key (kbd "C-, q") 'insert-qquad)
   (local-set-key (kbd "C-, t") 'insert-textbf)
-  (local-set-key (kbd "C-, C-r") 'insert-texttr)  
+  (local-set-key (kbd "C-, C-r") 'insert-texttr)
   (local-set-key (kbd "C-, C-b") 'insert-bigbrackets)
   (local-set-key (kbd "C-. C-b") 'insert-bigbraces)
   (local-set-key (kbd "C-, C-i") 'insert-textit)
@@ -1096,7 +1096,16 @@
             (local-set-key "\C-cp" 'org-deadline)))
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")
-	(sequence "|" "RESCHEDULED(r)" "CANCELED(c)")))
+		(sequence "|" "RESCHEDULED(r)" "CANCELED(c)")))
+(setq org-startup-indented t)
+
+;; a TODO entry automatically changes to DONE when all children are done
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+	(org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ORG ------------------------------------------------------------------------------------------------------------------------------
