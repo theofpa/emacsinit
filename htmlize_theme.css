@@ -76,7 +76,7 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
 	font-size: 10pt;
 	position: fixed;
 	right: 0em;
-	bottom: 0em;
+	top: 0em;
 	background: white;
 	line-height: 12pt;
 	text-align: right;
@@ -90,7 +90,7 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
 	overflow: auto;
 	z-index: 1; }
     #table-of-contents h2 {
-	font-size: 10pt;
+	font-size: 8pt;
 	max-width: 9em;
 	border: 0;
 	font-weight: normal;
