@@ -106,3 +106,8 @@ exit
 ls
 ./test
 ls
+ls
+cd ..
+ls
+cd testcpp/
+ls

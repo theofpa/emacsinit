@@ -789,7 +789,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-. C-g") 'golden-ratio)
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
 (define-key my-keys-minor-mode-map (kbd "C-. l") 'ace-jump-line-mode)
-(define-key my-keys-minor-mode-map "\C-s" 'swiper)
+(define-key my-keys-minor-mode-map "\C-s" 'swiper-helm)
 (define-key my-keys-minor-mode-map (kbd "M-p") 'ace-window)
 
 (define-minor-mode my-keys-minor-mode
@@ -1089,6 +1089,12 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
+;; (setq org-html-htmlize-output-type 'inline-css) ;; default
+(setq org-html-htmlize-output-type 'css)
+;; (setq org-html-htmlize-font-prefix "") ;; default
+(setq org-html-htmlize-font-prefix "org-")
+
 (add-to-list 'load-path "~/Dropbox/org/")
 (load-library "org-global-todo")
 (add-hook 'org-mode-hook
