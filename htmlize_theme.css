@@ -53,9 +53,9 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
     }
     body #content {
 	padding-top: 0px;
-	max-width: 87%;
+	max-width: 80%;
 	min-width: 700px;
-	margin-left: 20px;
+	margin-left: 90px;
 	background-color: white;
 	padding: 2em;
 	/* box-shadow: 3px 3px 5px #888; */
