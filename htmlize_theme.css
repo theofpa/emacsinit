@@ -53,7 +53,7 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
     }
     body #content {
 	padding-top: 0px;
-	max-width: 100%;
+	max-width: 87%;
 	min-width: 700px;
 	margin-left: 20px;
 	background-color: white;
@@ -90,7 +90,7 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
 	overflow: auto;
 	z-index: 1; }
     #table-of-contents h2 {
-	font-size: 8pt;
+	font-size: 9pt;
 	max-width: 9em;
 	border: 0;
 	font-weight: normal;
