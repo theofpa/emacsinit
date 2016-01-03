@@ -792,6 +792,7 @@
 (define-key my-keys-minor-mode-map "\C-s" 'swiper-helm)
 (define-key my-keys-minor-mode-map (kbd "M-p") 'ace-window)
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'helm-recentf)
+(define-key my-keys-minor-mode-map (kbd "C-c u") 'undo-tree-visualize)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
