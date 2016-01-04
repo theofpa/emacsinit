@@ -1106,6 +1106,7 @@
       '((sequence "TODO(t)" "|" "DONE(d)")
 		(sequence "|" "RESCHEDULED(r)" "CANCELED(c)")))
 (setq org-startup-indented t)
+(setq org-html-postamble nil)
 
 ;; a TODO entry automatically changes to DONE when all children are done
 (defun org-summary-todo (n-done n-not-done)
