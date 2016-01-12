@@ -69,6 +69,7 @@
 (electric-indent-mode 0)
 (setq default-tab-width 4)
 (setq c-basic-offset 4)
+(setq-default fill-column 85)
 
 (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)
