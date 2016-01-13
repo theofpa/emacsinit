@@ -70,6 +70,8 @@
 (setq default-tab-width 4)
 (setq c-basic-offset 4)
 (setq-default fill-column 85)
+(setq user-full-name "Xin Jin")
+(setq user-mail-address "xjin@rbox.me")
 
 (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)
@@ -1304,6 +1306,12 @@
                (face-foreground font-lock-comment-face)))
 
 (add-hook 'c++-mode-hook 'my-cc-init-hook)
+
+(defun my-doxymacs-font-lock-hook ()
+  (if (or (eq major-mode 'c-mode) (eq major-mode 'c++-mode))
+	  (doxymacs-font-lock)))
+(add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
+(add-hook 'c-mode-common-hook 'doxymacs-mode)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END COMMENT --------------------------------------------------------------------------------------------------------------------------
