@@ -987,6 +987,8 @@
 (setq org-startup-indented t)
 (setq org-html-postamble nil)
 (setq org-list-allow-alphabetical t)
+(setq org-tags-column 110)
+(setq org-agenda-tags-column 120)
 
 ;; a TODO entry automatically changes to DONE when all children are done
 (defun org-summary-todo (n-done n-not-done)
@@ -997,7 +999,7 @@
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 (setq org-columns-default-format
-      "%25ITEM %TODO %3PRIORITY %DEADLINE %SCHEDULED %TAGS")
+      "%3PRIORITY %25ITEM %CATEGORY %TAGS %DEADLINE %SCHEDULED")
 
 ;; (org-babel-load-file "org-ref.org")
 
