@@ -1313,6 +1313,20 @@
 (add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
 (add-hook 'c-mode-common-hook 'doxymacs-mode)
 
+(defconst doxymacs-file-comment-template
+'(
+   "/**" > n   
+   "* " (doxymacs-doxygen-command-char) "file    "
+   (if (buffer-file-name)
+       (file-name-nondirectory (buffer-file-name))
+     "") > n
+   "* " (doxymacs-doxygen-command-char) "author  " (user-full-name)   > n  
+   "* " (doxymacs-doxygen-command-char)"date    " (insert (format-time-string "%Y-%m-%d"))   > n
+   "* " > n
+   "* " (doxymacs-doxygen-command-char)"brief   " > n  
+   "*/"> n)
+ "Template for file documentation.")
+
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END COMMENT --------------------------------------------------------------------------------------------------------------------------
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
