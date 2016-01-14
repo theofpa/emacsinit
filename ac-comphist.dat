@@ -1,28 +1,28 @@
-((("tsdiag" .
-   [1 0 0 0 0 1])
-  ("a$" .
-   [1 0])
-  ("fit$aic" .
-   [1 0 0 0 0 0 0])
-  ("pred$pred" .
-   [0 0 0 0 0 1 0 0 0])
-  ("predict" .
-   [0 0 0 0 0 0 1])
-  ("dat2.stl$tim" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("dat.stl.ts$" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("dat.stl$time.series$" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("dat.stl$time.series" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1])
-  ("dat2.arima" .
-   [0 0 0 0 0 1 0 0 0 5])
-  ("forecast::auto.arima" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("install.packages" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+((("inferior-python-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 1 \.\.\.])
   ("interactive" .
    [0 0 0 0 0 0 0 0 0 0 \.\.\.])
-  ("inferior-python-mode-hook" .
-   [0 0 0 0 0 0 0 0 0 1 \.\.\.])))
+  ("install.packages" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("forecast::auto.arima" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("dat2.arima" .
+   [0 0 0 0 0 1 0 0 0 5])
+  ("dat.stl$time.series" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1])
+  ("dat.stl$time.series$" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("dat.stl.ts$" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("dat2.stl$tim" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("predict" .
+   [0 0 0 0 0 0 1])
+  ("pred$pred" .
+   [0 0 0 0 0 1 0 0 0])
+  ("fit$aic" .
+   [1 0 0 0 0 0 0])
+  ("a$" .
+   [1 0])
+  ("tsdiag" .
+   [1 0 0 0 0 1])))
