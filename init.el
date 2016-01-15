@@ -1135,23 +1135,24 @@
 ;;             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
 ;;               (ggtags-mode 1))))
 
+;; (define-key ggtags-mode-map (kbd "C-c g d") 'ggtags-find-tag-dwim)
 ;; (define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
 ;; (define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
 ;; (define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
 ;; (define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-;; (define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
 ;; (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 
 ;; (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 ;; (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
 (setq
+ helm-gtags-path-style 'relative
  helm-gtags-ignore-case t
  helm-gtags-auto-update t
  helm-gtags-use-input-at-cursor t
  helm-gtags-pulse-at-cursor t
- helm-gtags-prefix-key "\C-cg"
- helm-gtags-suggested-key-mapping t
+ ;; helm-gtags-prefix-key "\C-cg"
+ ;; helm-gtags-suggested-key-mapping t
  )
 
 ;; Enable helm-gtags-mode
@@ -1163,13 +1164,17 @@
 
 (eval-after-load "helm-gtags"
   '(progn
-	 (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-	 (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-	 (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-	 (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+	 (define-key helm-gtags-mode-map (kbd "C-. gt") 'helm-gtags-find-tag)
+	 (define-key helm-gtags-mode-map (kbd "C-. gr") 'helm-gtags-find-rtag)
+	 (define-key helm-gtags-mode-map (kbd "C-. gd") 'helm-gtags-dwim)
+	 (define-key helm-gtags-mode-map (kbd "C-. gs") 'helm-gtags-find-symbol)
+	 (define-key helm-gtags-mode-map (kbd "C-. gP") 'helm-gtags-parse-file)
+	 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
 	 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 	 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-	 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
+	 (define-key helm-gtags-mode-map (kbd "C-. gU") 'helm-gtags-update-tags)
+	 (define-key helm-gtags-mode-map (kbd "C-. gS") 'helm-gtags-show-stack)))
+
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END GGTAGS ---------------------------------------------------------------------------------------------------------------------------
@@ -1260,7 +1265,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
 (define-key my-keys-minor-mode-map (kbd "C-. l") 'ace-jump-line-mode)
 (define-key my-keys-minor-mode-map "\C-s" 'swiper-helm)
-(define-key my-keys-minor-mode-map (kbd "M-p") 'ace-window)
+(define-key my-keys-minor-mode-map (kbd "M-o") 'ace-window)
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'helm-recentf)
 (define-key my-keys-minor-mode-map (kbd "C-c u") 'undo-tree-visualize)
 (define-key my-keys-minor-mode-map (kbd "C-. ww") 'which-key-show-top-level)
@@ -1347,6 +1352,7 @@
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 
 (which-key-setup-side-window-right)
+;; (which-key-setup-minibuffer)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END WHICH-KEY ------------------------------------------------------------------------------------------------------------------------
