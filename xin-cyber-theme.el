@@ -1,72 +1,8 @@
 (deftheme xin-cyber
-  "Created 2014-01-02.")
-
-(let ((class '((class color) (min-colors 89)))
-      ;; Cyberpunk palette
-      (cyberpunk-fg "#dcdccc")
-      (cyberpunk-bg-1 "#2b2b2b")
-      (cyberpunk-bg-05 "#383838")
-      (cyberpunk-bg "#000000")
-      (cyberpunk-bg+1 "#4f4f4f")
-      (cyberpunk-bg+2 "#5f5f5f")
-      (cyberpunk-bg+3 "#6f6f6f")
-      (cyberpunk-red+1 "#dca3a3")
-      (cyberpunk-red "#ff0000")
-      (cyberpunk-red-1 "#8b0000")
-      (cyberpunk-red-2 "#8b0000")
-      (cyberpunk-red-3 "#9c6363")
-      (cyberpunk-red-4 "#8c5353")
-      (cyberpunk-red-5 "#7F073F")
-      (cyberpunk-pink "#ff69b4")
-      (cyberpunk-pink-1 "#ff1493")
-      (cyberpunk-pink-2 "#cd1076")
-      (cyberpunk-orange-2 "#FF6400")
-      (cyberpunk-orange-1 "#ff8c00") ;; DarkOrange
-      (cyberpunk-orange "#ffa500")
-      (cyberpunk-yellow "#ffff00")
-      (cyberpunk-yellow-1 "#FBDE2D")
-      (cyberpunk-yellow-2 "#d0bf8f")
-      (cyberpunk-yellow-3 "#D8FA3C")
-      (cyberpunk-yellow-4 "#E9C062")
-      (cyberpunk-yellow-5 "#ffd700")
-      (cyberpunk-green-2 "#006400")
-      (cyberpunk-green-1 "#2e8b57")
-      (cyberpunk-green "#00ff00")
-      (cyberpunk-green+1 "#61CE3C")
-      (cyberpunk-green+2 "#9fc59f")
-      (cyberpunk-green+3 "#afd8af")
-      (cyberpunk-green+4 "#bfebbf")
-      (cyberpunk-cyan "#93e0e3")
-      (cyberpunk-blue+1 "#94bff3")
-      (cyberpunk-blue "#0000ff")    ;; blue
-      (cyberpunk-blue-1 "#7b68ee")  ;; medium slate blue
-      (cyberpunk-blue-2 "#6a5acd")  ;; slate blue
-      (cyberpunk-blue-3 "#add8e6")  ;; light blue
-      (cyberpunk-blue-4 "#b2dfee")  ;; LightBlue2
-      (cyberpunk-blue-5 "#4c83ff")
-      (cyberpunk-blue-6 "#96CBFE")
-      (cyberpunk-blue-7 "#00ffff")
-      (cyberpunk-blue-8 "#4F94CD")
-      (cyberpunk-magenta "#dc8cc3")
-      (cyberpunk-black "#000000")
-      (cyberpunk-black-2 "#0C1021")
-      (cyberpunk-black-3 "#0A0A0A")
-      (cyberpunk-gray "#d3d3d3")
-      (cyberpunk-gray-2 "#8B8989")
-      (cyberpunk-gray-3 "#919191")
-      (cyberpunk-gray-4 "#999999")
-      (cyberpunk-gray-5 "#333333")
-      (cyberpunk-gray-6 "#1A1A1A")
-      (cyberpunk-gray-7 "#4D4D4D")
-      (cyberpunk-gray-8 "#262626")
-      (cyberpunk-white "#ffffff")
-      (cyberpunk-white-2 "#F8F8F8")
-      (cyberpunk-white-3 "#fffafa"))
-
+  "Created 2016-01-15.")
 
 (custom-theme-set-faces
  'xin-cyber
- '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil))))
  '(cursor ((t (:background "Gold"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((t (:family "Sans Serif"))))
@@ -81,8 +17,7 @@
  '(font-lock-comment-delimiter-face ((t (:slant italic :foreground "#999999" :inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:slant italic :foreground "#8B8989"))))
  '(font-lock-constant-face ((t (:weight bold :foreground "#E6DB74"))))
- '(font-lock-doc-face ((t (:slant italic :foreground "Maroon1" :inherit (font-lock-string-face)))))
- '(font-lock-function-name-face ((t (:weight bold :foreground "yellow green"))))
+ '(font-lock-function-name-face ((t (:foreground "maroon1" :weight bold))))
  '(font-lock-keyword-face ((t (:weight bold :foreground "light sky blue"))))
  '(font-lock-negation-char-face ((t (:weight bold :foreground "#6699cc"))))
  '(font-lock-preprocessor-face ((t (:foreground "#919191" :inherit (font-lock-builtin-face)))))
@@ -90,7 +25,7 @@
  '(font-lock-regexp-grouping-construct ((t (:weight bold :foreground "#ff0000" :inherit (bold)))))
  '(font-lock-string-face ((t (:foreground "#e6a8df"))))
  '(font-lock-type-face ((t (:weight bold :foreground "#D8FA3C"))))
- '(font-lock-variable-name-face ((t (:foreground "#D8FA3C"))))
+ '(font-lock-variable-name-face ((t (:foreground "spring green"))))
  '(font-lock-warning-face ((t (:weight bold :foreground "#ff69b4" :inherit (error)))))
  '(button ((t (:underline (:color foreground-color :style line) :foreground "#f6f3e8" :background "#333333" :inherit (link)))))
  '(link ((t (:weight bold :underline (:color foreground-color :style line) :foreground "#ffff00"))))
@@ -108,32 +43,8 @@
  '(lazy-highlight ((t (:weight bold :inverse-video t :foreground "#000000" :background "#ffff00"))))
  '(match ((t (:weight bold :inverse-video t :foreground "#ff1493" :background "#000000"))))
  '(next-error ((t (:inherit (region)))))
- '(query-replace ((t (:background "#333333" :inherit (isearch))))))
-
-
-
-   ;; eshell
-   `(eshell-prompt ((,class (:foreground ,cyberpunk-yellow :weight bold))))
-   `(eshell-ls-archive ((,class (:foreground ,cyberpunk-red-1 :weight bold))))
-   `(eshell-ls-backup ((,class (:inherit font-lock-comment))))
-   `(eshell-ls-clutter ((,class (:inherit font-lock-comment))))
-   `(eshell-ls-directory ((,class (:foreground ,cyberpunk-blue+1 :weight bold))))
-   `(eshell-ls-executable ((,class (:foreground ,cyberpunk-red+1 :weight bold))))
-   `(eshell-ls-unreadable ((,class (:foreground ,cyberpunk-fg))))
-   `(eshell-ls-missing ((,class (:inherit font-lock-warning))))
-   `(eshell-ls-product ((,class (:inherit font-lock-doc))))
-   `(eshell-ls-special ((,class (:foreground ,cyberpunk-yellow :weight bold))))
-   `(eshell-ls-symlink ((,class (:foreground ,cyberpunk-cyan :weight bold))))
-
-   ;; auctex
-   `(font-latex-bold ((,class (:inherit bold))))
-   `(font-latex-warning ((,class (:inherit font-lock-warning))))
-   `(font-latex-sedate ((,class (:foreground ,cyberpunk-yellow :weight bold))))
-   `(font-latex-string ((,class (:foreground ,cyberpunk-green))))
-   `(font-latex-title-4 ((,class (:inherit variable-pitch :weight bold))))
-   `(font-latex-sectioning-0 ((,class (:foreground ,cyberpunk-blue :background ,cyberpunk-black :scale 1.5))))
-   `(font-latex-sectioning-1 ((,class (:foreground ,cyberpunk-blue :background ,cyberpunk-black :scale 1.5)))))
-
-
+ '(query-replace ((t (:background "#333333" :inherit (isearch)))))
+ '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "rosy brown"))))
+ '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil)))))
 
 (provide-theme 'xin-cyber)
