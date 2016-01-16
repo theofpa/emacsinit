@@ -17,7 +17,7 @@
  '(font-lock-comment-delimiter-face ((t (:slant italic :foreground "#999999" :inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:slant italic :foreground "#8B8989"))))
  '(font-lock-constant-face ((t (:weight bold :foreground "#E6DB74"))))
- '(font-lock-function-name-face ((t (:foreground "maroon1" :weight bold))))
+ '(font-lock-function-name-face ((t (:foreground "hot pink" :weight bold))))
  '(font-lock-keyword-face ((t (:weight bold :foreground "light sky blue"))))
  '(font-lock-negation-char-face ((t (:weight bold :foreground "#6699cc"))))
  '(font-lock-preprocessor-face ((t (:foreground "#919191" :inherit (font-lock-builtin-face)))))
