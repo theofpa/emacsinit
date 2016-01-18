@@ -45,6 +45,7 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:background "#333333" :inherit (isearch)))))
  '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "rosy brown"))))
- '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil)))))
+ '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil))))
+ '(org-code ((t (:foreground "gold")))))
 
 (provide-theme 'xin-cyber)

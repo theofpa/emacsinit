@@ -1,5 +1,5 @@
 (deftheme xin-cyber
-  "Created 2016-01-15.")
+  "Created 2016-01-16.")
 
 (custom-theme-set-faces
  'xin-cyber
@@ -17,7 +17,7 @@
  '(font-lock-comment-delimiter-face ((t (:slant italic :foreground "#999999" :inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:slant italic :foreground "#8B8989"))))
  '(font-lock-constant-face ((t (:weight bold :foreground "#E6DB74"))))
- '(font-lock-function-name-face ((t (:foreground "hot pink" :weight bold))))
+ '(font-lock-function-name-face ((t (:foreground "tomato" :weight bold))))
  '(font-lock-keyword-face ((t (:weight bold :foreground "light sky blue"))))
  '(font-lock-negation-char-face ((t (:weight bold :foreground "#6699cc"))))
  '(font-lock-preprocessor-face ((t (:foreground "#919191" :inherit (font-lock-builtin-face)))))
@@ -45,6 +45,7 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:background "#333333" :inherit (isearch)))))
  '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "rosy brown"))))
- '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil)))))
+ '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil))))
+ '(org-code ((t (:inherit shadow :foreground "gold")))))
 
 (provide-theme 'xin-cyber)
