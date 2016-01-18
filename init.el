@@ -162,6 +162,9 @@
   (setq-local split-height-threshold nil)
   (setq-local split-width-threshold 0))
 
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END ENVIRONMENT VARIABLES ------------------------------------------------------------------------------------------------------------
@@ -618,6 +621,7 @@
   (local-set-key (kbd "C-c C-d") 'helm-sage-shell-describe-object-at-point)
   (local-set-key (kbd "M-r") 'helm-sage-command-history))
 (add-hook 'sage-shell-mode-hook 'helm-sage-set-up)
+(setq helm-split-window-default-side 'other)
 
 ;;--------------------------------------------------------------------------------------------------------------------------------------------
 ;; ---- END HELM -----------------------------------------------------------------------------------------------------------------------------
@@ -1374,8 +1378,6 @@
       (pike-mode . autodoc)
       (c-mode    . javadoc)
       (c++-mode  . javadoc)))
-  ;; (set-face-foreground 'font-lock-doc-face
-  ;;              (face-foreground font-lock-comment-face))
   )
 
 (add-hook 'c++-mode-hook 'my-cc-init-hook)
