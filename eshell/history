@@ -1,12 +1,3 @@
-vi
-vi
-exit
-sage
-sage
-sage
-sage
-ls
-sudo apt-get update
 sudo apt-get upgrade
 ls
 cd .emacs.d/
@@ -124,3 +115,14 @@ ls
 ls
 f
 fasd
+fzf
+ls
+exit
+fzf
+fasb
+fasd
+ls
+complete | peco
+peco
+ps ax | peco
+exit
