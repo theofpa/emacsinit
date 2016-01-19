@@ -1,3 +1,11 @@
+(use-package org-bullets
+:ensure t
+:init
+(setq org-bullets-bullet-list
+'("✸" "▶" "◉" "★" "○" "◇"))
+:config
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 (setq org-log-done 'time)
 ;; The following lines are always needed.  Choose your own keys.
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
@@ -11,6 +19,8 @@
 (setq org-html-htmlize-font-prefix "org-")
 
 (add-to-list 'load-path "~/Dropbox/org/")
+
+
 (load-library "org-global-todo")
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")

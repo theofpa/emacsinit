@@ -1,4 +1,3 @@
-
 (defun indent-whole-buffer ()
   "indent whole buffer"
   (interactive)
@@ -75,7 +74,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c ;") 'comment-or-uncomment-region)
 (define-key my-keys-minor-mode-map (kbd "C-?") 'help-command)
 (define-key my-keys-minor-mode-map (kbd "M-?") 'mark-paragraph)
-(define-key my-keys-minor-mode-map (kbd "C-h") 'delete-backward-char)
+;(define-key my-keys-minor-mode-map (kbd "C-h") 'delete-backward-char)
 (define-key my-keys-minor-mode-map (kbd "M-h") 'backward-kill-word)
 (define-key my-keys-minor-mode-map (kbd "C-, SPC") 'just-one-space)
 (define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)

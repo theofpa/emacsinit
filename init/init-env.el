@@ -6,8 +6,9 @@
 
 (setq default-cursor-type 'bar)
 (package-initialize)
-(global-linum-mode t)
+(require 'use-package)
 
+(global-linum-mode t)
 
 (require 'popwin)
 (popwin-mode 1)
@@ -20,6 +21,7 @@
 (add-to-list 'default-frame-alist
              '(font . "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
 
+(require 'chinese-fonts-setup)
 
 (toggle-frame-maximized)
 (setq initial-major-mode 'text-mode)
