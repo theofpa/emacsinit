@@ -50,9 +50,6 @@
   (setq-local split-height-threshold nil)
   (setq-local split-width-threshold 0))
 
-(setq split-height-threshold nil)
-(setq split-width-threshold 0)
-
 
 (defun toggle-fullscreen (&optional f)
   (interactive)

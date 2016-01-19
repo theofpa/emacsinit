@@ -100,7 +100,9 @@
 (require 'init-cpp)
 (require 'init-latex)
 (require 'init-ess)
+(require 'init-ruby)
 (require 'init-markdown)
+(require 'init-org)
 
 
 ;; Packages for General Usage
