@@ -30,7 +30,7 @@
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 (setq org-columns-default-format
-      "%3PRIORITY %25ITEM %CATEGORY %TAGS %DEADLINE %SCHEDULED")
+      "%3PRIORITY %ITEM %CATEGORY %TAGS %DEADLINE %SCHEDULED")
 
 ;; (org-babel-load-file "org-ref.org")
 
