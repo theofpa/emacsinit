@@ -10,7 +10,7 @@
 	(deft-complete)))
 
 (defun deft-mode-local-keys ()
-  (local-set-key (kbd "C-m") 'deft-enter-close-last-window))
+  (local-set-key (kbd "M-m") 'deft-enter-close-last-window))
 
 (add-hook 'deft-mode-hook 'deft-mode-local-keys)
 
