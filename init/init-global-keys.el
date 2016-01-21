@@ -112,6 +112,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-. c") 'cfw:open-org-calendar)
 (define-key my-keys-minor-mode-map (kbd "C-, m") 'helm-global-mark-ring)
 (define-key my-keys-minor-mode-map (kbd "C-. k") 'kill-this-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-c C-q") 'quit-window)
 (define-key my-keys-minor-mode-map (kbd "C-. d") 'deft)
 (define-key my-keys-minor-mode-map (kbd "C-. 4") 'toggle-window-split)
 (define-key my-keys-minor-mode-map (kbd "C-. 2") (lambda () (interactive)(split-window-vertically) (other-window 1)))
