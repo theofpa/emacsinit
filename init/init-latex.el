@@ -120,8 +120,8 @@
   (local-set-key (kbd "C-. C-b") 'insert-bigbraces)
   (local-set-key (kbd "C-, C-i") 'insert-textit)
   (local-set-key (kbd "C-, C-t") 'insert-text)
-  (local-set-key (kbd "C-. C-d") 'insert-documentclass)
-  (local-set-key (kbd "C-. d") 'insert-documentclassxin)
+  (local-set-key (kbd "C-, C-d") 'insert-documentclass)
+  (local-set-key (kbd "C-, d") 'insert-documentclassxin)
 )
 
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-keys)

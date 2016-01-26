@@ -29,8 +29,19 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/helm-swoop")
 (require 'helm-swoop)
 
+;; Change default behavior
+(setq helm-swoop-pre-input-function
+      (lambda () ""))
+
+(defun helm-swoop-thing-at-point ()
+  (interactive)
+  (progn
+	(helm-swoop)
+	(helm-swoop-yank-thing-at-point)))
+
+
 ;; Change the keybinds to whatever you like :)
-(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-i") 'helm-swoop-thing-at-point)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
 (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
 (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)

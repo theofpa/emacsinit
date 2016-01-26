@@ -1,5 +1,5 @@
 (deftheme xin-cyber
-  "Created 2016-01-16.")
+  "Created 2016-01-25.")
 
 (custom-theme-set-faces
  'xin-cyber
@@ -45,7 +45,9 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:background "#333333" :inherit (isearch)))))
  '(font-lock-doc-face ((t (:inherit font-lock-string-face :foreground "rosy brown"))))
+ '(org-code ((t (:foreground "gold"))))
+ '(org-block-begin-line ((t (:inherit org-meta-line :box (:line-width 2 :color "grey75" :style released-button)))))
  '(default ((t (:family "Source Code Mono" :foundry "unknown" :width normal :height 115 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#d3d3d3" :background "#2e3436" :stipple nil :inherit nil))))
- '(org-code ((t (:foreground "gold")))))
+ '(org-verbatim ((t (:inherit org-code)))))
 
 (provide-theme 'xin-cyber)
