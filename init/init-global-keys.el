@@ -103,7 +103,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
 (define-key my-keys-minor-mode-map (kbd "C-. l") 'ace-jump-line-mode)
 (define-key my-keys-minor-mode-map (kbd "C-. C-s") 'swiper-helm)
-(define-key my-keys-minor-mode-map (kbd "C-s") 'helm-swoop)
+(define-key my-keys-minor-mode-map (kbd "C-s") 'helm-swoop-with-no-query)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'ace-window)
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'helm-recentf)
 (define-key my-keys-minor-mode-map (kbd "C-c u") 'undo-tree-visualize)

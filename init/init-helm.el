@@ -30,18 +30,21 @@
 (require 'helm-swoop)
 
 ;; Change default behavior
-(setq helm-swoop-pre-input-function
-      (lambda () ""))
+;; (setq helm-swoop-pre-input-function
+;;       (lambda () ""))
 
-(defun helm-swoop-thing-at-point ()
+(defun helm-swoop-with-no-query ()
   (interactive)
-  (progn
-	(helm-swoop)
-	(helm-swoop-yank-thing-at-point)))
+  (let ((_helm-swoop-pre-input-function helm-swoop-pre-input-function))
+    (unwind-protect
+        (progn
+          (setq helm-swoop-pre-input-function (lambda () nil))
+          (helm-swoop))
+      (setq helm-swoop-pre-input-function _helm-swoop-pre-input-function))))
 
 
 ;; Change the keybinds to whatever you like :)
-(global-set-key (kbd "M-i") 'helm-swoop-thing-at-point)
+(global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
 (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
 (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
