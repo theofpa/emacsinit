@@ -3,7 +3,7 @@
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
-  (untabify (point-min) (point-max)))
+(untabify (point-min) (point-max)))
 (defun indent-current-paragraph ()
   "indent current paragraph"
   (interactive)
@@ -68,7 +68,7 @@
 
 ;; better approach to bind keys - use a minor-mode
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
-
+ 
 (define-key my-keys-minor-mode-map (kbd "C-c l") 'quick-copy-line)
 (define-key my-keys-minor-mode-map (kbd "C-, C-/") 'indent-whole-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-c ;") 'comment-or-uncomment-region)
@@ -76,7 +76,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-?") 'mark-paragraph)
 ;(define-key my-keys-minor-mode-map (kbd "C-h") 'delete-backward-char)
 (define-key my-keys-minor-mode-map (kbd "M-h") 'backward-kill-word)
-(define-key my-keys-minor-mode-map (kbd "C-, SPC") 'just-one-space)
+;(define-key my-keys-minor-mode-map (kbd "C-, SPC") 'just-one-space)
 (define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
 (define-key my-keys-minor-mode-map (kbd "C-. i") 'helm-imenu)
 (define-key my-keys-minor-mode-map (kbd "C-. n") 'neotree-toggle)
@@ -101,9 +101,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-. o") 'switch-window)
 (define-key my-keys-minor-mode-map (kbd "C-. C-g") 'golden-ratio)
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
-(define-key my-keys-minor-mode-map (kbd "C-. l") 'ace-jump-line-mode)
+(define-key my-keys-minor-mode-map (kbd "C-, l") 'ace-jump-line-mode)
 (define-key my-keys-minor-mode-map (kbd "C-. C-s") 'swiper-helm)
-(define-key my-keys-minor-mode-map (kbd "C-s") 'helm-swoop-with-no-query)
+(define-key my-keys-minor-mode-map (kbd "C-s") 'helm-swoop-without-pre-input)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'ace-window)
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'helm-recentf)
 (define-key my-keys-minor-mode-map (kbd "C-c u") 'undo-tree-visualize)

@@ -115,3 +115,4 @@
 (require 'init-fzf)
 (require 'init-deft)
 (require 'init-miscel)
+(require 'init-god)

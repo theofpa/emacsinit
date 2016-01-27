@@ -29,20 +29,6 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/helm-swoop")
 (require 'helm-swoop)
 
-;; Change default behavior
-;; (setq helm-swoop-pre-input-function
-;;       (lambda () ""))
-
-(defun helm-swoop-with-no-query ()
-  (interactive)
-  (let ((_helm-swoop-pre-input-function helm-swoop-pre-input-function))
-    (unwind-protect
-        (progn
-          (setq helm-swoop-pre-input-function (lambda () nil))
-          (helm-swoop))
-      (setq helm-swoop-pre-input-function _helm-swoop-pre-input-function))))
-
-
 ;; Change the keybinds to whatever you like :)
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)

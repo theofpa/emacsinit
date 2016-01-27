@@ -122,6 +122,7 @@
   (local-set-key (kbd "C-, C-t") 'insert-text)
   (local-set-key (kbd "C-, C-d") 'insert-documentclass)
   (local-set-key (kbd "C-, d") 'insert-documentclassxin)
+  (local-unset-key (kbd "\""))
 )
 
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-keys)

@@ -30,6 +30,7 @@
 (setq org-list-allow-alphabetical t)
 (setq org-tags-column 110)
 (setq org-agenda-tags-column 120)
+(setq org-startup-truncated nil)
 
 ;; a TODO entry automatically changes to DONE when all children are done
 (defun org-summary-todo (n-done n-not-done)

@@ -256,7 +256,7 @@
   "Emacs quick move minor mode"
   t)
 ;; you can select the key you prefer to
-(define-key global-map (kbd "C-. SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-, SPC") 'ace-jump-mode)
 
 
 
