@@ -1,4 +1,4 @@
-(global-set-key (kbd "<escape>") 'god-local-mode)
+(global-set-key (kbd "<escape>") 'god-mode-all)
 (setq god-exempt-major-modes nil)
 (setq god-exempt-predicates nil)
 ;; (defun my-update-cursor ()

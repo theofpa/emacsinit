@@ -102,6 +102,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-. C-g") 'golden-ratio)
 (define-key my-keys-minor-mode-map (kbd "C-, C-o") 'delete-trailing-whitespace)
 (define-key my-keys-minor-mode-map (kbd "C-, l") 'ace-jump-line-mode)
+(define-key my-keys-minor-mode-map (kbd "C-, SPC") 'ace-jump-mode)
 (define-key my-keys-minor-mode-map (kbd "C-. C-s") 'swiper-helm)
 (define-key my-keys-minor-mode-map (kbd "C-s") 'helm-swoop-without-pre-input)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'ace-window)
@@ -110,13 +111,14 @@
 (define-key my-keys-minor-mode-map (kbd "C-. ww") 'which-key-show-top-level)
 (define-key my-keys-minor-mode-map (kbd "C-. wa") 'which-key-abort)
 (define-key my-keys-minor-mode-map (kbd "C-. c") 'cfw:open-org-calendar)
-(define-key my-keys-minor-mode-map (kbd "C-, m") 'helm-global-mark-ring)
+(define-key my-keys-minor-mode-map (kbd "C-, m") 'helm-all-mark-rings)
 (define-key my-keys-minor-mode-map (kbd "C-. k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-c C-q") 'quit-window)
 (define-key my-keys-minor-mode-map (kbd "C-. d") 'deft)
 (define-key my-keys-minor-mode-map (kbd "C-. 4") 'toggle-window-split)
 (define-key my-keys-minor-mode-map (kbd "C-. 2") (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (define-key my-keys-minor-mode-map (kbd "C-. 3") (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+(define-key my-keys-minor-mode-map (kbd "C-q") 'read-only-mode)
 
 
 (define-minor-mode my-keys-minor-mode
