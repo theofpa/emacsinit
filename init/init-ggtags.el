@@ -19,9 +19,11 @@
   '(progn
 	 (define-key helm-gtags-mode-map (kbd "C-. gt") 'helm-gtags-find-tag)
 	 (define-key helm-gtags-mode-map (kbd "C-. gr") 'helm-gtags-find-rtag)
+	 (define-key helm-gtags-mode-map (kbd "C-. gR") 'helm-gtags-resume)
 	 (define-key helm-gtags-mode-map (kbd "C-. gd") 'helm-gtags-dwim)
 	 (define-key helm-gtags-mode-map (kbd "C-. gs") 'helm-gtags-find-symbol)
 	 (define-key helm-gtags-mode-map (kbd "C-. gP") 'helm-gtags-parse-file)
+	 (define-key helm-gtags-mode-map (kbd "C-. gp") 'helm-gtags-select)
 	 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
 	 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 	 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
